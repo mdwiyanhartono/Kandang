@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kandang"
+        android:fontFamily="@font/airbnbcerealblack"
+        android:textSize="24sp"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/black"/>
+    <LinearLayout
+        android:id="@+id/tablayout"
+        android:layout_below="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/search"
+            android:focusable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:background="@drawable/basic_round_stoke"
+            android:hint="Cari"
+            android:drawableEnd="@drawable/search"
+            android:paddingStart="25dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+
+            android:paddingTop="10dp"
+            android:layout_margin="15dp"
+            android:inputType="text" />
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:gravity="center">
+            <include layout="@layout/tab_layout" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:id="@+id/ly2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablayout"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelmemiliki"/>
+            <TextView
+                android:id="@+id/countkandang"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="2 kandang aktif"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/line"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ly2"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/button"
+        android:foregroundGravity="center"
+        android:src="@drawable/add"
+        android:textAlignment="center" />
+</RelativeLayout>
